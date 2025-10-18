@@ -29,7 +29,8 @@
     "#database/*": "./database/*.js",
     "#start/*": "./start/*.js",
     "#tests/*": "./tests/*.js",
-    "#config/*": "./config/*.js"
+    "#config/*": "./config/*.js",
+    "#graphql/*": "./app/graphql/*.js"
   },
   "devDependencies": {
     "@adonisjs/assembler": "^7.8.2",
@@ -55,7 +56,11 @@
     "@adonisjs/core": "^6.18.0",
     "@adonisjs/cors": "^2.2.1",
     "@adonisjs/lucid": "^21.6.1",
+    "@adonisjs/static": "^1.1.1",
+    "@foadonis/graphql": "^0.0.9",
     "@vinejs/vine": "^3.0.1",
+    "graphql": "^16.11.0",
+    "graphql-scalars": "^1.25.0",
     "luxon": "^3.7.2",
     "mysql2": "^3.15.2",
     "reflect-metadata": "^0.2.2"

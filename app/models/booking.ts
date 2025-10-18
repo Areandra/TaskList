@@ -3,17 +3,23 @@ import User from './user.js'
 import Fasilitas from './fasilita.js'
 import { DateTime } from 'luxon'
 import type { BelongsTo } from '@adonisjs/lucid/types/relations'
+import { Field, ID, Int, ObjectType } from '@foadonis/graphql'
 
+
+@ObjectType()
 export default class Booking extends BaseModel {
   public static table = 'bookings'
 
   @column({ isPrimary: true })
+  @Field(() => ID)
   declare id: number
 
   @column()
+  @Field(() => Int)
   declare id_user: number
 
   @column()
+  @Field()
   declare id_fasilitas: number
 
   @column()
