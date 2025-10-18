@@ -18,28 +18,34 @@ export default class Booking extends BaseModel {
   @Field(() => Int)
   declare id_user: number
 
-  @column()
-  @Field()
+  @column({})
+  @Field(() => Int)
   declare id_fasilitas: number
 
   @column()
+  @Field()
   declare no_ruang: string
-
+  
   @column.dateTime({ autoCreate: true, autoUpdate: true })
+  @Field()
   declare tgl_pinjam: DateTime
-
+  
   @column.dateTime({ autoCreate: true, autoUpdate: true })
+  @Field()
   declare tgl_kembali: DateTime
-
+  
   @column()
+  @Field()
   declare status: 'Disetujui' | 'Dibatalkan' | 'Menunggu' | 'Dikembalikan' | 'Digunakan'
-
+  
   @column.dateTime({ autoCreate: true })
+  @Field()
   declare createdAt: DateTime
-
+  
   @column.dateTime({ autoCreate: true, autoUpdate: true })
+  @Field()
   declare updatedAt: DateTime
-
+  
   @belongsTo(() => User, { foreignKey: 'id' })
   declare user: BelongsTo<typeof User>
 

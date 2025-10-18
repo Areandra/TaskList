@@ -1,3 +1,4 @@
+import { Field, ID, ObjectType } from '@foadonis/graphql'
 import { DateTime } from 'luxon'
 import hash from '@adonisjs/core/services/hash'
 import { compose } from '@adonisjs/core/helpers'
@@ -10,26 +11,33 @@ const AuthFinder = withAuthFinder(() => hash.use('scrypt'), {
   passwordColumnName: 'password',
 })
 
+@ObjectType()
 export default class User extends compose(BaseModel, AuthFinder) {
   @column({ isPrimary: true })
+  @Field(() => ID)
   declare id: number
 
   @column()
+  @Field(() => String, { nullable: true })
   declare username: string | null
 
   @column()
+  @Field()
   declare email: string
 
   @column({ serializeAs: null })
   declare password: string
 
   @column()
+  @Field()
   declare role: 'admin' | 'user'
 
   @column.dateTime({ autoCreate: true })
+  @Field()
   declare createdAt: DateTime
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
+  @Field(() => DateTime, {nullable: true})
   declare updatedAt: DateTime | null
 
   static accessTokens = DbAccessTokensProvider.forModel(User)

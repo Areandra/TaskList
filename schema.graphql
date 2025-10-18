@@ -3,6 +3,18 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+type Booking {
+  createdAt: LuxonDateTime!
+  id: ID!
+  id_fasilitas: Int!
+  id_user: Int!
+  no_ruang: String!
+  status: String!
+  tgl_kembali: LuxonDateTime!
+  tgl_pinjam: LuxonDateTime!
+  updatedAt: LuxonDateTime!
+}
+
 type Fasilitas {
   createdAt: LuxonDateTime!
   id: ID!
@@ -15,7 +27,19 @@ type Fasilitas {
 scalar LuxonDateTime
 
 type Query {
-  demo: String!
+  Booking(id: Float!): Booking!
+  Bookings: [Booking!]!
+  User(id: Float!): User!
+  Users: [User!]!
   fasilitas(id: Float!): Fasilitas!
   semuaFasilitas: [Fasilitas!]!
+}
+
+type User {
+  createdAt: LuxonDateTime!
+  email: String!
+  id: ID!
+  role: String!
+  updatedAt: LuxonDateTime
+  username: String
 }
