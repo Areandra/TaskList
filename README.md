@@ -1,6 +1,6 @@
 # GivenTech — Facility & Asset Borrowing Management System
 
-> A web-based facility and asset borrowing management platform — empowering **Admins** and **Users** to manage inventory, handle the booking process, confirm pick-up/return via QR Code, and receive realtime notifications through WhatsApp and Socket.IO.
+> Modern facility/item loan management information system for campuses, organizations, and companies. Integrated with online booking, QR Code verification, approval workflow, room location tracking, and real-time notifications (WhatsApp Cloud API). Designed as a full-stack application with scalable and modular architecture using AdonisJS 6.
 
 ![Node.js](https://img.shields.io/badge/Node.js-20+-green?logo=nodedotjs&logoColor=white)
 ![AdonisJS](https://img.shields.io/badge/AdonisJS-6.x-6E4AFF?logo=adonisjs&logoColor=white)
